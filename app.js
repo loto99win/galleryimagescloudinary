@@ -11,7 +11,9 @@ const app = express();
 
 // configuration
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+ origin: 'https://galleryimagescloudinary.web.app/'  
+}));
 app.use(morgan('common'));
 app.use(bodyParser.json({ limit: '50mb'}));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true}));
