@@ -12,7 +12,7 @@ const app = express();
 // configuration
 app.use(helmet());
 app.use(cors({
- origin: 'https://galleryimagescloudinary.web.app/'  
+ origin: ['https://galleryimagescloudinary.web.app/', 'http://localhost:4200/'] 
 }));
 app.use(morgan('common'));
 app.use(bodyParser.json({ limit: '50mb'}));
