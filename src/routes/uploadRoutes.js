@@ -107,4 +107,26 @@ router.put('/update/:id', upload.single('avatar'), asyncHandler(async (req, res)
     res.send('Deleted all avatar ok');
   }));
 
+  router.get('/images/jpg', asyncHandler(async(req, res) => {
+    try {
+        const result = await Avatar.find({
+            format: 'jpg'
+        });
+        res.status(200).json(result);
+    } catch(err) {
+     console.log(err);   
+    }
+  }));
+
+router.get('/images/png', asyncHandler(async(req, res) => {
+    try {
+        const result = await Avatar.find({
+            format: 'png'
+        });
+        res.status(200).json(result);
+    } catch(err) {
+     console.log(err);   
+    }
+  }));
+
 module.exports = router;
